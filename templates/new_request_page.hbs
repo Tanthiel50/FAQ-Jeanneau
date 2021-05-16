@@ -1,0 +1,25 @@
+<section class="section hero hero-small">
+  <header class="hero-inner">
+    <div class="hero-inner-search">
+      {{search submit=false instant=settings.instant_search class="search search-full"}}
+    </div>
+  </header>
+</section>
+
+<div class="container">
+  <nav class="sub-nav">
+    {{breadcrumbs}}
+  </nav>
+
+  <div class="form">
+    <header class="form-header">
+      <h1 class="form-header-heading">
+        <i class="fas fa-paper-plane"></i> {{t 'submit_a_request'}}
+        {{#if follow_up}}
+        <span class="follow-up-hint">{{follow_up}}</span>
+        {{/if}}
+      </h1>
+    </header>
+    {{request_form}}
+  </div>
+</div>

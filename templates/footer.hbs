@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="footer-inner">
+    <nav id=footer-nav class="footer-nav">
+      <div class="footer-nav-column">
+       {{dc 'footer'}}
+      </div>
+      <div class="footer-nav-column">
+        {{dc 'footer_jeanneau'}}
+      </div>
+      <div class="footer-nav-column">
+        <h3 class="footer-nav-title"><font color="a7a9ac">Social</font></h3>
+        <ul class="footer-nav-list">
+          <li><i class="fab fa-facebook" style="color: #a7a9ac;"></i> <a href="https://www.facebook.com/JeanneauOfficial/" target="_blank">Facebook</a>
+          </li>
+          <li><i class="fab fa-instagram" style="color: #a7a9ac;"></i> <a href="https://www.instagram.com/jeanneau_official/" target="_blank">@Jeanneau_official</a>
+          </li>
+          <li><i class="fab fa-youtube" style="color: #a7a9ac;"></i> <a href="https://www.youtube.com/channel/UCN6KV7C7nUigyjTLKdE4Ysg/" target="_blank">Youtube</a>
+          </li>
+          <li><i class="fab fa-linkedin" style="color: #a7a9ac;"></i> <a href="https://fr.linkedin.com/company/jeanneau" target="_blank">Linkedin</a>
+          </li>
+          <li><i class="fab fa-twitter" style="color: #a7a9ac;"></i> <a
+              href="https://twitter.com/EtsJeanneau" target="_blank">@Jeanneau</a></li>
+          <li><i class="fab fa-pinterest" style="color: #a7a9ac;"></i> <a href="https://www.pinterest.fr/jeanneau/" target="_blank">Pinterest</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="footer-bottom">
+      <div class="footer-bottom-copyright">©2020 SPBI Jeanneau</div>
+      {{#if alternative_locales}}
+      <div class="footer-bottom-language-selector">
+        <div class="dropdown language-selector" aria-haspopup="true">
+          <a class="dropdown-toggle">
+            {{current_locale.name}}
+          </a>
+          <span class="dropdown-menu dropdown-menu-end" role="menu">
+            {{#each alternative_locales}}
+            <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+              {{name}}
+            </a>
+            {{/each}}
+          </span>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</footer>

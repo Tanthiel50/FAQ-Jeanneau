@@ -1,0 +1,130 @@
+{{!-- Hide header background on the home page --}}
+<style>
+  .header {
+    background-color: transparent;
+    box-shadow: none;
+  }
+</style>
+
+<section class="section hero hero-large">
+  <div class="hero-inner">
+    {{dc 'header_centre_d_aide'}}
+    <div class="hero-inner-search">
+      <br>
+      {{search submit=false instant=settings.instant_search class='search search-full'}}
+    </div>
+    <div class="quick-search">
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <section class="section knowledge-base">
+    {{dc 'header_quick_search'}}
+    <br>
+   {{dc 'categories_homepage'}}
+    <section class="categories blocks">
+      <ul class="blocks-list">
+        {{#each categories}}
+        {{#if ../has_multiple_categories}}
+        <li class="blocks-item">
+          <a href='{{url}}' class="blocks-item-link">
+            {{#is name 'ADMINISTRATIF'}}
+            	<img alt="Jeanneau Administratif" src={{asset 'Jeanneau_administratif_bleu.png'}} />
+            {{/is}}
+            {{#is name 'DOCUMENTS'}}
+            	<img alt="Jeanneau Documentation" src="{{asset 'Jeanneau_documentation.png'}}" />
+            {{/is}}
+            {{#is name 'ENTRETIEN'}}
+            	<img alt="Jeanneau Maintenance Entretien" src="{{asset 'Jeanneau_maintenance_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'PIECES DE RECHANGE'}}
+            	<img alt="Jeanneau piece de rechange" src="{{asset 'Jeanneau_spare_parts_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'ACHAT / VENTE'}}
+            	<img alt="Jeanneau achat vente" src="{{asset 'Jeanneau_achat_vente_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'EVENEMENT'}}
+            	<img alt="Jeanneau Evenement" src="{{asset 'Jeanneau_event_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'COVID-19'}}
+            	<img alt="Covid" src="{{asset 'covid.png'}}" />
+            {{/is}}
+            
+            {{#is name 'Administration Forms'}}
+            	<img alt="Jeanneau Administratif" src={{asset 'Jeanneau_administratif_bleu.png'}} />
+            {{/is}}
+            {{#is name 'Booklets'}}
+            	<img alt="Jeanneau Documentation" src="{{asset 'Jeanneau_documentation.png'}}" />
+            {{/is}}
+            {{#is name 'Maintenance'}}
+            	<img alt="Jeanneau Maintenance Entretien" src="{{asset 'Jeanneau_maintenance_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'Spare Parts'}}
+            	<img alt="Jeanneau piece de rechange" src="{{asset 'Jeanneau_spare_parts_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'Buy / Sell'}}
+            	<img alt="Jeanneau achat vente" src="{{asset 'Jeanneau_achat_vente_bleu.png'}}" />
+            {{/is}}
+            {{#is name 'Events'}}
+            	<img alt="Jeanneau Evenement" src="{{asset 'Jeanneau_event_bleu.png'}}" />
+            {{/is}}
+            
+            <h3 class="blocks-item-title">{{name}}</h3>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
+        {{else}}
+        {{#each sections}}
+        <li class="blocks-item">
+          <a href='{{url}}' class="blocks-item-link">
+            <h2 class="blocks-item-title">
+              {{name}}
+            </h2>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
+        {{/each}}
+        {{/if}}
+        {{/each}}
+      </ul>
+      {{pagination}}
+    </section>
+
+    {{!-- {{#if promoted_articles}}
+    <section class="articles">
+      <h3>{{t 'promoted_articles'}}</h3>
+      <ul class="article-list promoted-articles">
+        {{#each promoted_articles}}
+        <li class="promoted-articles-item">
+          <a href="{{url}}">
+            {{title}}
+
+            {{#if internal}}
+            <span class="icon-lock" title="{{t 'internal'}}"></span>
+            {{/if}}
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    {{/if}}
+  </section> --}}
+
+    {{!-- {{#if help_center.community_enabled}}
+    <section class="section community">
+      <h2>{{t 'community'}}</h2>
+      {{#link 'community' class='community-link'}}
+      {{t 'join_conversation'}}
+      {{/link}}
+
+      <div class="community-image"></div>
+    </section>
+    {{/if}} --}}
+
+    {{!-- <section class="section activity">
+      {{#if settings.show_recent_activity}}
+      {{recent_activity}}
+      {{/if}}
+    </section> --}}
+</div>
